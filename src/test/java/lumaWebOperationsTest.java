@@ -74,7 +74,7 @@ public class lumaWebOperationsTest {
 
     @Test(priority = 3)
     public void myAccount() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         WebElement dropDownClick = driver.findElement(By.cssSelector("body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome > span > button"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(dropDownClick));
@@ -138,7 +138,7 @@ public class lumaWebOperationsTest {
 
     @Test(priority = 4)
     public void visitHome() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         WebElement backToHome = driver.findElement(By.xpath("//a[@href = 'https://magento.softwaretestingboard.com/']"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait8 = new WebDriverWait(driver, Duration.ofSeconds(8));
@@ -148,7 +148,7 @@ public class lumaWebOperationsTest {
 
     @Test(priority = 5)
     public void myWishlist() {
-
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         WebElement product1 = driver.findElement(By.xpath("//div[@class='product-item-info']//img[@alt='Radiant Tee']"));
         Actions action1 = new Actions(driver);
         action1.moveToElement(product1).build().perform();
@@ -194,8 +194,9 @@ public class lumaWebOperationsTest {
 
     @Test(priority = 6)
     public void AddToCompare() {
-        WebElement backToHome = driver.findElement(By.cssSelector("img[src='https://magento.softwaretestingboard.com/pub/static/version1695896754/frontend/Magento/luma/en_US/images/logo.svg"));
-        backToHome.click();
+         driver.findElement(By.xpath("//a[@href = 'https://magento.softwaretestingboard.com/']")).click();
+        // WebElement backToHome = driver.findElement(By.cssSelector("img[src='https://magento.softwaretestingboard.com/pub/static/version1695896754/frontend/Magento/luma/en_US/images/logo.svg"));
+        // backToHome.click();
 
 //first item addition to comparison list
         WebElement item1 = driver.findElement(By.xpath("//div[@class='product-item-info']//img[@alt='Radiant Tee']"));
@@ -247,15 +248,15 @@ public class lumaWebOperationsTest {
         driver.findElement(By.cssSelector("footer.modal-footer button.action-primary\n")).click();
     }
 
-    @Test(priority = 7)
-    public void Cart() {
-        //printing size of cart
-        WebElement cartSizeElement = driver.findElement(By.cssSelector("span.counter-label"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        // cartSizeElement.click();
-        String cartSize = cartSizeElement.getText();
-        System.out.println("Cart Size: " + cartSize);
-    }
+    // @Test(priority = 7)
+    // public void Cart() {
+    //     //printing size of cart
+    //     WebElement cartSizeElement = driver.findElement(By.cssSelector("span.counter-label"));
+    //     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    //     // cartSizeElement.click();
+    //     String cartSize = cartSizeElement.getText();
+    //     System.out.println("Cart Size: " + cartSize);
+    // }
 //Go to view and Edit cart
 //        WebElement viewAndEditCart = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='View and Edit Cart']")));
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

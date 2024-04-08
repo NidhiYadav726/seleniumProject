@@ -32,3 +32,9 @@ jobs:
 
     - name: Run Selenium tests
       run: mvn clean test
+    - name: Archive test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+          name: upload-results
+          path: Selenium/target/surefire-reports

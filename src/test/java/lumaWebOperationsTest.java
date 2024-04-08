@@ -25,7 +25,7 @@ public class lumaWebOperationsTest {
           options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
-       System.setProperty("webdriver.chrome.driver", driverPath);
+      // System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().window().maximize();

@@ -21,10 +21,11 @@ public class lumaWebOperationsTest {
     @BeforeTest
     public void VisitHomePage() {
         options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        //   options.addArguments("--no-sandbox");
-        // options.addArguments("--disable-dev-shm-usage");
-        // options.addArguments("--headless");
+     //   options.addArguments("--remote-allow-origins=*");
+          options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+       System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.manage().window().maximize();

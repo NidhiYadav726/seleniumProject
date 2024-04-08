@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: upload-results
-          path: seleniumProject/target/surefire-reports
+          path: target/surefire-reports

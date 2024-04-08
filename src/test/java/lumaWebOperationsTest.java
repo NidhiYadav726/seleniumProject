@@ -28,6 +28,7 @@ public class lumaWebOperationsTest {
       // System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        options.addArguments("--window-size=1920x1080");
         driver.manage().window().maximize();
         driver.get(" https://magento.softwaretestingboard.com/");
     }
